@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Arithmetic_Calculation</b></title>
+<style>
+#main
+{
+width:650px;
+height:500px;
+border:1px solid black;
+margin:auto;
+background:#097d6c;
+box-shadow:1px 1px 1px 1px grey;
+}
+</style>
+
+</head>
+
+<body background="https://dl.dropbox.com/s/f6za5s0jusghj4e/education-mathematics-mathematical-game-education-operation-addition-subtraction-arithmetic-png-clipart-thumbnail.jpg">
+<div id="main">
+<center>
+    <h1 style="background-color:powderblue;"> Arithmetic Operator-Calculator </h1>
+    <b><h2 style="color:navy;">Number 1</h2></b>
+    <input type="number" id="num1"><br>
+    <br>
+    <b><h2 style="color:navy;">Number 2</h2></b>
+    <input type="number" id="num2"><br>
+    <br>
+    <input type="checkbox" name="op" id="add" value="+"><b>ADD (+)</b><br>
+    <input type="checkbox" name="op" id="sub" value="-"><b>SUBTRACT (-)</b><br>
+    <input type="checkbox" name="op" id="mul" value="*"><b>MULTIPLY (*)</b><br>
+    <input type="checkbox" name="op" id="div" value="/"><b>DIVIDE (/)</b><br>
+    <button id="btn"><h2 style="color:#0f0661"><b>Calculate</b></h2></button>
+    <div id="opDiv"></div>
+    <script type="text/javascript" >
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        const ops = document.querySelectorAll('input[name="op"]');
+        let btn = document.getElementById("btn");
+        let opDiv = document.getElementById("opDiv");
+        btn.onclick = () => {
+            let selectedValue;
+            let val1 = parseInt(num1.value);
+            let val2 = parseInt(num2.value);
+            let out;
+            for (const op of ops) {
+                if (op.checked) {
+                    selectedValue = op.value;
+                    break;
+                }
+            }
+            switch(selectedValue) {
+                case "+":
+                    out = val1 + val2;
+                    break;
+                case "-":
+                    out = val1 - val2;
+                    break;
+                case "*":
+                    out = val1 * val2;
+                    break;
+                case "/":
+                    out = val1 / val2;
+            }
+            opDiv.innerHTML = out;
+        }
+
+    </script>
+</div>
+</center>
+</body>
+</html>
